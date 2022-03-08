@@ -1,0 +1,166 @@
+:root {
+  --body-bg-color: #121214;
+  --text-color: #e1e1e6;
+  --title-color: #04d361;
+  --form-color: #a8a8a8;
+  --bg-button-color: #8257e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Spartan', sans-serif;
+  background-color: var(--body-bg-color);
+  overflow-x: hidden;
+}
+main {
+  display: flex;
+  position: relative;
+
+  width: 100vw;
+}
+main section.main {
+  min-width: 50vw;
+  margin: 50px 30px;
+}
+section.main h1 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Work Sans';
+
+  margin: 60px 6px 10px 6px;
+  color: var(--title-color);
+}
+section.main h3 {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: var(--text-color);
+  margin: 0 6px 10px 6px;
+}
+section.main > p {
+  font-size: 14px;
+  font-weight: 400;
+
+  color: var(--text-color);
+  margin: 0 6px 40px 6px;
+}
+section.main label {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: var(--form-color);
+  margin: 0 6px;
+}
+section.main div.email {
+  display: flex;
+  position: absolute;
+  font-family: 'Work Sans';
+  font-size: 12px;
+
+  min-width: 60vw;
+  height: 48px;
+
+  margin: 18px 0 0 6px;
+  filter: drop-shadow(4px 10px 15px rgba(0, 0, 0, 0.5));
+}
+div.email input {
+  height: 100%;
+  width: calc(100% - 48px);
+
+  padding: 15px 17px;
+  border-left: 5px solid var(--title-color);
+}
+div.email button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 14px;
+  margin: 0;
+  background-color: var(--bg-button-color);
+}
+div.email button svg {
+  color: var(--text-color);
+}
+div.view {
+  display: flex;
+  align-items: center;
+  margin: 115px 0 0 6px;
+  color: var(--bg-button-color);
+}
+div.view p {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+div.view img {
+  width: 24px;
+  height: 24px;
+}
+
+img {
+  height: 100vh;
+}
+img.logo {
+  height: 100px;
+}
+
+div.shippingAlert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  position: absolute;
+  top: -100px;
+  right: 0;
+  opacity: 0;
+
+  background-color: var(--body-bg-color);
+  border-radius: 5px;
+  padding: 14px;
+  margin: 32px 24px 0 0;
+
+  animation: alert-output 2s ease-in-out forwards;
+  transition: 0.5 all ease;
+}
+div.shippingAlert p {
+  font-size: 14px;
+  font-weight: 500;
+
+  color: var(--text-color);
+}
+div.shippingAlert.active {
+  animation: alert-entry 2s ease forwards;
+}
+@keyframes alert-entry {
+  from {
+    top: -250px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes alert-output {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    top: -250px;
+    opacity: 0;
+  }
+}
